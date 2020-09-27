@@ -1,0 +1,16 @@
+gradients:
+from, to, via
+
+object-fit:
+things can be done via resizeMode
+
+overflow:
+scrollview?
+
+
+  pointer: ["pointer-events-none", "pointer-events-auto"],
+
+
+    uppercase: ["uppercase"],
+  lowercase: ["lowercase"],
+  capitalize: ["capitalize"],
