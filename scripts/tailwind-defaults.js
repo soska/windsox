@@ -200,11 +200,11 @@ module.exports = {
       full: "9999px",
     },
     borderWidth: {
-      default: "1px",
-      0: "0",
-      2: "2px",
-      4: "4px",
-      8: "8px",
+      default: 1,
+      0: 0,
+      2: 2,
+      4: 4,
+      8: 8,
     },
     boxShadow: {
       xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
