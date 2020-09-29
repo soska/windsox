@@ -1,57 +1,51 @@
 import React from "react";
-import { get, set } from "lodash";
-import { View as RNView, StyleSheet } from "react-native";
+import isFunction from "lodash/isFunction";
+import { View as RNView, StyleSheet, Dimensions } from "react-native";
+import windsock from "./windsock.styles";
 
-const UNIT = 4;
+const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
-const bg = {
-  red: {
-    backgroundColor: "red",
-  },
-  blue: {
-    backgroundColor: "blue",
-  },
-  yellow: {
-    backgroundColor: "yellow",
-  },
-  green: {
-    backgroundColor: "green",
-  },
-  pink: {
-    backgroundColor: "pink",
-  },
+const createEnvironment = (initial = {}) => {
+  const values = initial;
+
+  const get = (name) => {
+    return values[name];
+  };
+
+  const set = (name, value) => {
+    return (values[name] = value);
+  };
+
+  return {
+    get,
+    set,
+  };
 };
 
-const p = {
-  1: {
-    padding: UNIT,
-  },
-  2: {
-    padding: UNIT * 2,
-  },
-  3: {
-    padding: UNIT * 3,
-  },
-  4: {
-    padding: UNIT * 4,
-  },
-  5: {
-    padding: UNIT * 5,
-  },
-};
-
-const sock = { bg, p };
-
-export const View = ({ classes = [], style: passedStyle, ...props }) => {
+const getStyles = (classes, initialStyles = {}) => {
   let styles = {};
-  classes.forEach((c) => {
-    console.log(c);
-    const style = get(sock, c);
-    styles = { ...styles, ...style };
-    console.log(styles);
+
+  const env = createEnvironment({
+    screenWidth,
+    screenHeight,
+    backgroundOpacity: "ff",
   });
 
-  const appliedStyle = StyleSheet.compose(passedStyle, styles);
+  classes.forEach((selector) => {
+    let style = windsock[selector];
+    if (isFunction(style)) {
+      style = style(env);
+    }
 
-  return <RNView {...props} style={appliedStyle} />;
+    styles = { ...styles, ...style };
+  });
+
+  // console.log(styles);
+
+  return StyleSheet.compose(styles, initialStyles);
+};
+
+export const View = ({ classes = [], style: passedStyle, ...props }) => {
+  const style = getStyles(classes, passedStyle);
+  return <RNView {...props} style={style} />;
 };
