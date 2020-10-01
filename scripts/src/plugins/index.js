@@ -1,21 +1,16 @@
-const backgroundColors = require("./background-colors");
-const borderColors = require("./border-colors");
-const borderRadius = require("./border-radius");
-const borderWidths = require("./border-widths");
-const margins = require("./margins");
-const paddings = require("./paddings");
-const heights = require("./heights");
-const widths = require("./widths");
-const flex = require("./flex");
-
 module.exports = {
-  backgroundColors,
-  borderColors,
-  borderRadius,
-  borderWidths,
-  margins,
-  paddings,
-  widths,
-  heights,
-  flex,
+  backgroundColors: require("./background-colors"),
+  borderColors: require("./border-colors"),
+  borderRadius: require("./border-radius"),
+  borderWidths: require("./border-widths"),
+  margins: require("./margins"),
+  paddings: require("./paddings"),
+  heights: require("./heights"),
+  widths: require("./widths"),
+  flex: require("./flex"),
+  fontSizes: require("./font-sizes"),
+  textColors: require("./text-colors"),
+  fontWeights: require("./font-weights"),
+  fontFamilies: require("./font-families"),
+  zIndexes: require("./z-indexes"),
 };

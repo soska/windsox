@@ -42,15 +42,4 @@ function generateStylesheetWithConfig(config) {
 
 generateStylesheetWithConfig({
   ...config,
-  plugins: [
-    // "backgroundColors",
-    // "borderColors",
-    // "borderRadius",
-    // "borderWidths",
-    // "margins",
-    // "paddings",
-    // "widths",
-    // "heights",
-    "flex",
-  ],
 });

@@ -1,11 +1,7 @@
+// this is based on and adapted from Tailwind‘s default config
+// https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js#L5
 module.exports = {
   theme: {
-    screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-    },
     colors: {
       transparent: "transparent",
       // current: "currentColor",
@@ -124,6 +120,7 @@ module.exports = {
         900: "#702459",
       },
     },
+
     spacing: {
       px: 1,
       0: 0,
@@ -145,29 +142,18 @@ module.exports = {
       56: 224,
       64: 256,
     },
+
     backgroundColor: (theme) => theme("colors"),
+
     backgroundOpacity: (theme) => theme("opacity"),
-    backgroundPosition: {
-      bottom: "bottom",
-      center: "center",
-      left: "left",
-      "left-bottom": "left bottom",
-      "left-top": "left top",
-      right: "right",
-      "right-bottom": "right bottom",
-      "right-top": "right top",
-      top: "top",
-    },
-    backgroundSize: {
-      auto: "auto",
-      cover: "cover",
-      contain: "contain",
-    },
+
     borderColor: (theme) => ({
       ...theme("colors"),
       default: theme("colors.gray.300", "currentColor"),
     }),
+
     borderOpacity: (theme) => theme("opacity"),
+
     borderRadius: {
       none: 0,
       sm: 2,
@@ -176,6 +162,7 @@ module.exports = {
       lg: 8,
       full: 9999,
     },
+
     borderWidth: {
       default: 1,
       0: 0,
@@ -183,6 +170,7 @@ module.exports = {
       4: 4,
       8: 8,
     },
+
     boxShadow: {
       xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
       sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
@@ -199,81 +187,68 @@ module.exports = {
       outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
       none: "none",
     },
+
     container: {},
-    cursor: {
-      auto: "auto",
-      default: "default",
-      pointer: "pointer",
-      wait: "wait",
-      text: "text",
-      move: "move",
-      "not-allowed": "not-allowed",
-    },
-    divideColor: (theme) => theme("borderColor"),
-    divideOpacity: (theme) => theme("borderOpacity"),
-    divideWidth: (theme) => theme("borderWidth"),
-    fill: {
-      current: "currentColor",
-    },
+
     flex: {
       1: 1,
       0: 0,
     },
+
     flexGrow: {
       0: "0",
       default: "1",
     },
+
     flexShrink: {
       0: "0",
       default: "1",
     },
 
     justify: {
-      start: "flex-start",
-      end: "flex-end",
-      center: "center",
-      between: "space-between",
       around: "space-around",
+      between: "space-between",
+      center: "center",
+      end: "flex-end",
       evenly: "space-evenly",
+      start: "flex-start",
     },
+
+    alignContent: (theme) => theme("justify"),
+
+    alignSelf: {
+      auto: "auto",
+      center: "center",
+      end: "flex-end",
+      start: "flex-start",
+      stretch: "stretch",
+    },
+
+    alignItems: {
+      baseline: "baseline",
+      center: "center",
+      end: "flex-end",
+      start: "flex-start",
+      stretch: "stretch",
+    },
+
     fontFamily: {
-      sans: [
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        '"Segoe UI"',
-        "Roboto",
-        '"Helvetica Neue"',
-        "Arial",
-        '"Noto Sans"',
-        "sans-serif",
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
-      serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
-      mono: [
-        "Menlo",
-        "Monaco",
-        "Consolas",
-        '"Liberation Mono"',
-        '"Courier New"',
-        "monospace",
-      ],
+      sans: "System",
     },
+
     fontSize: {
-      xs: "0.75rem",
-      sm: "0.875rem",
-      base: "1rem",
-      lg: "1.125rem",
-      xl: "1.25rem",
-      "2xl": "1.5rem",
-      "3xl": "1.875rem",
-      "4xl": "2.25rem",
-      "5xl": "3rem",
-      "6xl": "4rem",
+      xs: 12,
+      sm: 14,
+      base: 16,
+      lg: 18,
+      xl: 20,
+      "2xl": 24,
+      "3xl": 30,
+      "4xl": 36,
+      "5xl": 48,
+      "6xl": 64,
     },
+
     fontWeight: {
       hairline: "100",
       thin: "200",
@@ -285,15 +260,18 @@ module.exports = {
       extrabold: "800",
       black: "900",
     },
+
     height: (theme) => ({
       auto: "auto",
       ...theme("spacing"),
       full: "100%",
     }),
+
     inset: {
       0: "0",
       auto: "auto",
     },
+
     letterSpacing: {
       tighter: "-0.05em",
       tight: "-0.025em",
@@ -302,6 +280,7 @@ module.exports = {
       wider: "0.05em",
       widest: "0.1em",
     },
+
     lineHeight: {
       none: "1",
       tight: "1.25",
@@ -318,20 +297,24 @@ module.exports = {
       9: "2.25rem",
       10: "2.5rem",
     },
+
     listStyleType: {
       none: "none",
       disc: "disc",
       decimal: "decimal",
     },
+
     margin: (theme, { negative }) => ({
       auto: "auto",
       ...theme("spacing"),
       ...negative(theme("spacing")),
     }),
+
     maxHeight: {
       full: "100%",
       screen: "100vh",
     },
+
     maxWidth: (theme, { breakpoints }) => ({
       none: "none",
       xs: "20rem",
@@ -347,15 +330,18 @@ module.exports = {
       full: "100%",
       ...breakpoints(theme("screens")),
     }),
+
     minHeight: {
       0: "0",
       full: "100%",
       screen: "100vh",
     },
+
     minWidth: {
       0: "0",
       full: "100%",
     },
+
     objectPosition: {
       bottom: "bottom",
       center: "center",
@@ -367,6 +353,7 @@ module.exports = {
       "right-top": "right top",
       top: "top",
     },
+
     opacity: {
       0: "0",
       25: "0.25",
@@ -374,6 +361,7 @@ module.exports = {
       75: "0.75",
       100: "1",
     },
+
     order: {
       first: "-9999",
       last: "9999",
@@ -391,6 +379,7 @@ module.exports = {
       11: "11",
       12: "12",
     },
+
     padding: (theme) => theme("spacing"),
     placeholderColor: (theme) => theme("colors"),
     placeholderOpacity: (theme) => theme("opacity"),
@@ -398,16 +387,21 @@ module.exports = {
       ...theme("spacing"),
       ...negative(theme("spacing")),
     }),
+
     stroke: {
       current: "currentColor",
     },
+
     strokeWidth: {
       0: "0",
       1: "1",
       2: "2",
     },
+
     textColor: (theme) => theme("colors"),
+
     textOpacity: (theme) => theme("opacity"),
+
     width: (theme) => ({
       auto: "auto",
       ...theme("spacing"),
@@ -439,101 +433,18 @@ module.exports = {
       "11/12": "91.666667%",
       full: "100%",
     }),
+
     zIndex: {
-      auto: "auto",
-      0: "0",
-      10: "10",
-      20: "20",
-      30: "30",
-      40: "40",
-      50: "50",
+      0: 0,
+      10: 10,
+      20: 20,
+      30: 30,
+      40: 40,
+      50: 50,
     },
+
     gap: (theme) => theme("spacing"),
-    gridColumn: {
-      auto: "auto",
-      "span-1": "span 1 / span 1",
-      "span-2": "span 2 / span 2",
-      "span-3": "span 3 / span 3",
-      "span-4": "span 4 / span 4",
-      "span-5": "span 5 / span 5",
-      "span-6": "span 6 / span 6",
-      "span-7": "span 7 / span 7",
-      "span-8": "span 8 / span 8",
-      "span-9": "span 9 / span 9",
-      "span-10": "span 10 / span 10",
-      "span-11": "span 11 / span 11",
-      "span-12": "span 12 / span 12",
-    },
-    gridColumnStart: {
-      auto: "auto",
-      1: "1",
-      2: "2",
-      3: "3",
-      4: "4",
-      5: "5",
-      6: "6",
-      7: "7",
-      8: "8",
-      9: "9",
-      10: "10",
-      11: "11",
-      12: "12",
-      13: "13",
-    },
-    gridColumnEnd: {
-      auto: "auto",
-      1: "1",
-      2: "2",
-      3: "3",
-      4: "4",
-      5: "5",
-      6: "6",
-      7: "7",
-      8: "8",
-      9: "9",
-      10: "10",
-      11: "11",
-      12: "12",
-      13: "13",
-    },
-    gridTemplateRows: {
-      none: "none",
-      1: "repeat(1, minmax(0, 1fr))",
-      2: "repeat(2, minmax(0, 1fr))",
-      3: "repeat(3, minmax(0, 1fr))",
-      4: "repeat(4, minmax(0, 1fr))",
-      5: "repeat(5, minmax(0, 1fr))",
-      6: "repeat(6, minmax(0, 1fr))",
-    },
-    gridRow: {
-      auto: "auto",
-      "span-1": "span 1 / span 1",
-      "span-2": "span 2 / span 2",
-      "span-3": "span 3 / span 3",
-      "span-4": "span 4 / span 4",
-      "span-5": "span 5 / span 5",
-      "span-6": "span 6 / span 6",
-    },
-    gridRowStart: {
-      auto: "auto",
-      1: "1",
-      2: "2",
-      3: "3",
-      4: "4",
-      5: "5",
-      6: "6",
-      7: "7",
-    },
-    gridRowEnd: {
-      auto: "auto",
-      1: "1",
-      2: "2",
-      3: "3",
-      4: "4",
-      5: "5",
-      6: "6",
-      7: "7",
-    },
+
     transformOrigin: {
       center: "center",
       top: "top",
@@ -545,6 +456,7 @@ module.exports = {
       left: "left",
       "top-left": "top left",
     },
+
     scale: {
       0: "0",
       50: ".5",
@@ -557,6 +469,7 @@ module.exports = {
       125: "1.25",
       150: "1.5",
     },
+
     rotate: {
       "-180": "-180deg",
       "-90": "-90deg",
@@ -566,6 +479,7 @@ module.exports = {
       90: "90deg",
       180: "180deg",
     },
+
     translate: (theme, { negative }) => ({
       ...theme("spacing"),
       ...negative(theme("spacing")),
@@ -574,6 +488,7 @@ module.exports = {
       "1/2": "50%",
       full: "100%",
     }),
+
     skew: {
       "-12": "-12deg",
       "-6": "-6deg",
@@ -583,69 +498,22 @@ module.exports = {
       6: "6deg",
       12: "12deg",
     },
-    transitionProperty: {
-      none: "none",
-      all: "all",
-      default:
-        "background-color, border-color, color, fill, stroke, opacity, box-shadow, transform",
-      colors: "background-color, border-color, color, fill, stroke",
-      opacity: "opacity",
-      shadow: "box-shadow",
-      transform: "transform",
-    },
-    transitionTimingFunction: {
-      linear: "linear",
-      in: "cubic-bezier(0.4, 0, 1, 1)",
-      out: "cubic-bezier(0, 0, 0.2, 1)",
-      "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
-    },
-    transitionDuration: {
-      75: "75ms",
-      100: "100ms",
-      150: "150ms",
-      200: "200ms",
-      300: "300ms",
-      500: "500ms",
-      700: "700ms",
-      1000: "1000ms",
-    },
-    transitionDelay: {
-      75: "75ms",
-      100: "100ms",
-      150: "150ms",
-      200: "200ms",
-      300: "300ms",
-      500: "500ms",
-      700: "700ms",
-      1000: "1000ms",
-    },
-    animation: {
-      none: "none",
-      spin: "spin 1s linear infinite",
-      ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
-      pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-      bounce: "bounce 1s infinite",
-    },
-    keyframes: {
-      spin: {
-        to: { transform: "rotate(360deg)" },
-      },
-      ping: {
-        "75%, 100%": { transform: "scale(2)", opacity: "0" },
-      },
-      pulse: {
-        "50%": { opacity: ".5" },
-      },
-      bounce: {
-        "0%, 100%": {
-          transform: "translateY(-25%)",
-          animationTimingFunction: "cubic-bezier(0.8,0,1,1)",
-        },
-        "50%": {
-          transform: "none",
-          animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
-        },
-      },
-    },
   },
+
+  plugins: [
+    "backgroundColors",
+    "borderColors",
+    "borderRadius",
+    "borderWidths",
+    "margins",
+    "paddings",
+    "widths",
+    "heights",
+    "flex",
+    "fontSizes",
+    "textColors",
+    "fontWeights",
+    "fontFamilies",
+    "zIndexes",
+  ],
 };
