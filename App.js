@@ -1,50 +1,47 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, ScrollView } from "react-native";
 import { View } from "./windsock/view";
 
+const txt = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem vel
+similique asperiores laborum rem sed dolor quaerat a nemo voluptas
+porro optio et suscipit possimus.`;
+
 export default function App() {
+  const lhs = ["3", "4", "5", "6", "7", "8", "9", "10"];
   return (
-    <View style={styles.container} classes={["bg-opacity-10", "bg-yellow-200"]}>
-      {/* <View
-        classes={[
-          "bg-pink-100",
-          "p-4",
-          "border",
-          "border-pink-500",
-          "rounded",
-          "h-32",
-          "w-screen",
-        ]}
-      >
-        <Text style={styles.text}>
-          Open up App.js to start working on your app!
-        </Text>
-      </View> */}
-      <View classes={["bg-red-700", "w-5", "h-5", "m-5"]} style={styles.a} />
-      <View classes={["bg-red-700", "w-5", "h-5", "m-5"]} style={styles.b} />
-      <View
-        classes={["bg-red-700", "w-5", "h-5", "m-5"]}
-        style={[styles.a, styles.b]}
-      />
-    </View>
+    <ScrollView>
+      <View style={styles.container} classes={["bg-gray-200"]}>
+        {lhs.map((lh) => (
+          <View classes={["bg-white", "p-4", "mx-2", "mb-4"]} key={lh}>
+            <Text style={styles[lh]}>{txt}</Text>
+          </View>
+        ))}
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: "25%",
+    margin: "auto",
   },
   text: {
     fontFamily: "System",
   },
-  a: {
-    transform: [{ scale: 2 }],
-    backgroundColor: "blue",
-  },
-  b: {
-    transform: [{ rotate: "45deg" }],
-  },
+
+  3: { lineHeight: 12 },
+  4: { lineHeight: 16 },
+  5: { lineHeight: 20 },
+  6: { lineHeight: 24 },
+  7: { lineHeight: 28 },
+  8: { lineHeight: 32 },
+  9: { lineHeight: 36 },
+  10: { lineHeight: 40 },
 });

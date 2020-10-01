@@ -391,20 +391,14 @@
  [x] text-4xl
  [x] text-5xl
  [x] text-6xl
- [ ] leading-3
- [ ] leading-4
- [ ] leading-5
- [ ] leading-6
- [ ] leading-7
- [ ] leading-8
- [ ] leading-9
- [ ] leading-10
- [ ] leading-none
- [ ] leading-tight
- [ ] leading-snug
- [ ] leading-normal
- [ ] leading-relaxed
- [ ] leading-loose
+ [x] leading-3
+ [x] leading-4
+ [x] leading-5
+ [x] leading-6
+ [x] leading-7
+ [x] leading-8
+ [x] leading-9
+ [x] leading-10
  [x] m-0
  [x] m-1
  [x] m-2
@@ -423,7 +417,7 @@
  [x] m-48
  [x] m-56
  [x] m-64
- [ ] m-auto
+ [x] m-auto
  [x] m-px
  [x] -m-1
  [x] -m-2
@@ -694,11 +688,11 @@
  [ ] min-h-screen
  [ ] min-w-0
  [ ] min-w-full
- [ ] opacity-0
- [ ] opacity-25
- [ ] opacity-50
- [ ] opacity-75
- [ ] opacity-100
+ [x] opacity-0
+ [x] opacity-25
+ [x] opacity-50
+ [x] opacity-75
+ [x] opacity-100
  [ ] outline-none
  [x] p-0
  [x] p-1
@@ -833,49 +827,27 @@
  [x] pr-px
  [x] pb-px
  [x] pl-px
- [ ] pointer-events-none
- [ ] pointer-events-auto
- [ ] static
- [ ] fixed
- [ ] absolute
- [ ] relative
- [ ] sticky
- [ ] inset-0
- [ ] inset-auto
- [ ] inset-y-0
- [ ] inset-x-0
- [ ] inset-y-auto
- [ ] inset-x-auto
- [ ] top-0
- [ ] right-0
- [ ] bottom-0
- [ ] left-0
- [ ] top-auto
- [ ] right-auto
- [ ] bottom-auto
- [ ] left-auto
- [ ] resize-none
- [ ] resize-y
- [ ] resize-x
- [ ] resize
- [ ] shadow-xs
- [ ] shadow-sm
- [ ] shadow
- [ ] shadow-md
- [ ] shadow-lg
- [ ] shadow-xl
- [ ] shadow-2xl
- [ ] shadow-inner
- [ ] shadow-outline
- [ ] shadow-none
- [ ] table-auto
- [ ] table-fixed
- [ ] text-left
- [ ] text-center
- [ ] text-right
- [ ] text-justify
+ [x] absolute
+ [x] relative
+ [x] inset-0
+ [x] inset-y-0
+ [x] inset-x-0
+ [x] top-0
+ [x] right-0
+ [x] bottom-0
+ [x] left-0
+ [x] shadow-xs
+ [x] shadow-sm
+ [x] shadow
+ [x] shadow-md
+ [x] shadow-lg
+ [x] shadow-xl
+ [x] shadow-2xl
+ [x] text-left
+ [x] text-center
+ [x] text-right
+ [x] text-justify
  [x] text-transparent
- [ ] text-current
  [x] text-black
  [x] text-white
  [x] text-gray-100

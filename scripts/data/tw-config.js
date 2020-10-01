@@ -145,14 +145,10 @@ module.exports = {
 
     backgroundColor: (theme) => theme("colors"),
 
-    backgroundOpacity: (theme) => theme("opacity"),
-
     borderColor: (theme) => ({
       ...theme("colors"),
       default: theme("colors.gray.300", "currentColor"),
     }),
-
-    borderOpacity: (theme) => theme("opacity"),
 
     borderRadius: {
       none: 0,
@@ -172,20 +168,83 @@ module.exports = {
     },
 
     boxShadow: {
-      xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
-      sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-      default:
-        "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
-      md:
-        "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-      lg:
-        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-      xl:
-        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-      inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
-      outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
-      none: "none",
+      xs: {
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowOpacity: 0.18,
+        shadowRadius: 1.0,
+
+        elevation: 1,
+      },
+      sm: {
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.6,
+
+        elevation: 4,
+      },
+      default: {
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+
+        elevation: 7,
+      },
+      md: {
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 5,
+        },
+        shadowOpacity: 0.3,
+        shadowRadius: 6.2,
+
+        elevation: 10,
+      },
+      lg: {
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 6,
+        },
+        shadowOpacity: 0.4,
+        shadowRadius: 8.3,
+
+        elevation: 13,
+      },
+      xl: {
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 10,
+        },
+        shadowOpacity: 0.5,
+        shadowRadius: 14,
+
+        elevation: 21,
+      },
+      "2xl": {
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 13,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16,
+
+        elevation: 24,
+      },
     },
 
     container: {},
@@ -269,7 +328,6 @@ module.exports = {
 
     inset: {
       0: "0",
-      auto: "auto",
     },
 
     letterSpacing: {
@@ -282,20 +340,14 @@ module.exports = {
     },
 
     lineHeight: {
-      none: "1",
-      tight: "1.25",
-      snug: "1.375",
-      normal: "1.5",
-      relaxed: "1.625",
-      loose: "2",
-      3: ".75rem",
-      4: "1rem",
-      5: "1.25rem",
-      6: "1.5rem",
-      7: "1.75rem",
-      8: "2rem",
-      9: "2.25rem",
-      10: "2.5rem",
+      3: 12,
+      4: 16,
+      5: 20,
+      6: 24,
+      7: 28,
+      8: 32,
+      9: 36,
+      10: 40,
     },
 
     listStyleType: {
@@ -512,8 +564,14 @@ module.exports = {
     "flex",
     "fontSizes",
     "textColors",
+    "textAlignments",
     "fontWeights",
     "fontFamilies",
     "zIndexes",
+    "opacities",
+    "positions",
+    "insets",
+    "boxShadows",
+    "lineHeights",
   ],
 };
